@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+  <head>
+    <title>TripPilot Payment</title>
+  </head>
+  <body style="text-align: center; margin-top: 60px; font-family: Arial">
+    <h2>Ticket Booking Payment</h2>
+
+    <p><strong>Order ID:</strong> {{ order_id }}</p>
+    <p><strong>Amount:</strong> ₹{{ amount }}</p>
+
+    <br />
+
+    <a href="{{ upi_link }}">
+      <button style="padding: 12px 20px; font-size: 16px">Pay via UPI</button>
+    </a>
+
+    <br /><br /><br />
+
+    <h3>After Payment Enter UTR</h3>
+
+    <form action="/submit-payment" method="post">
+      <input type="hidden" name="order_id" value="{{ order_id }}" />
+
+      <input
+        type="text"
+        name="utr"
+        placeholder="Enter UTR Number"
+        required
+        style="padding: 8px; width: 250px"
+      />
+
+      <br /><br />
+
+      <button type="submit" style="padding: 10px 18px">Submit</button>
+    </form>
+  </body>
+</html>
