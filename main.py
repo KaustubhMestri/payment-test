@@ -55,7 +55,7 @@ UPI_ID = "7720053652@kotakbank"
 
 @app.get("/")
 def payment_page(request: Request):
-    amount = 1.00  # Test amount
+    amount = 10.00  # Test amount
 
     order_id = str(uuid.uuid4())[:8]
 
